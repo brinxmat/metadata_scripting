@@ -1,0 +1,5 @@
+#!/bin/bash
+# Add rights information to file
+# addrights <filename> <identifier> <license-uri> <your-attribution-string> <your-licensing-admin-uri> <your-attribution-uri>
+
+exiftool -XMP-dc:identifier="$2" -XMP-xmpRights:marked="true" -XMP-dc:rights="$3" -XMP-xmpRights:usageTerms="$3" -XMP-cc:attributionName="$4" -XMP-cc:morePermissions="$5" -XMP-cc:attributionURL="$6" "$1" -overwrite_original

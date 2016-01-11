@@ -1,5 +1,6 @@
 #!/bin/bash
 # Add rights information to file
 # addrights <filename> <identifier> <license-uri> <your-attribution-string> <your-licensing-admin-uri> <your-attribution-uri>
+# eg: $ addrights 1232212.jpg 1232212 https://creativecommons.org/licenses/by/4.0/ "The example institute" http://example.com/licensing-faq http://example.com/image/
 
 exiftool -XMP-dc:identifier="$2" -XMP-xmpRights:marked="true" -XMP-dc:rights="$3" -XMP-xmpRights:usageTerms="$3" -XMP-cc:attributionName="$4" -XMP-cc:morePermissions="$5" -XMP-cc:attributionURL="$6" "$1" -overwrite_original
